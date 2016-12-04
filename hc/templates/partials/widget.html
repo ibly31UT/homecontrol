@@ -1,0 +1,15 @@
+{% if mobile %}
+<li id="{{ control.id }}" class="widgetCard mobileWidgetCard card" data-sizex="1" data-sizey="1">
+    <div class="card-block widgetButton btn btn-block" data-toggle="modal" data-target="#modal{{ control.id }}" style="background-color:{{ control.color }};">
+        {% if control.mobilename is None %}{{ control.name }}{% else %}{{ control.mobilename }}{% endif %}
+    </div>
+</li>
+{% else %}
+<li id="{{ control.id }}" class="widgetCard card" data-sizex="1" data-sizey="1" style="color:{{ control.color }}">
+    <div class="card-header" style="background-color:{{ control.color }}"><h5 class="white">{{ control.name }}</h5></div>
+    <div class="card-block">{{ control.description }}</div>
+    <div class="card-footer" style="background-color:{{ control.color }}">
+        <button class="widgetButton btn btn-sm btn-block" data-toggle="modal" data-target="#modal{{ control.id }}" style="background-color:{{ control.color }};">Control Panel</button>
+    </div>
+</li>
+{% endif %}

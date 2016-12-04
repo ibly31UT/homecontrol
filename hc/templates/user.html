@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block usernav %}
+<li class="nav-item">
+  <a class="nav-link" href="#">Logged in as <strong>{{ user.name }}</strong></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/deauth">Logout</a>
+</li>
+{% endblock %}
+
+{% block content %}
+<script type="text/javascript">
+$(document).ready(function(){
+  showNav("#userLink");
+
+  $("#authButton").on("click", function(){
+    window.location.replace("/saved/posts/{{ username }}");
+  });
+});
+</script>
+<div class="container-fluid">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <div id="authPanel" class="card text-xs-center">
+      <div class="card-header">
+        <h2>Signed in as {{ user.name }}</h2>
+      </div>
+      <div class="card-block">
+        <button id="authButton" class="btn btn-lg btn-info" type="button" role="button">
+          View My Saved Posts
+        </button>
+      </div>
+      <div class="card-footer text-muted">
+        Last updated 10 minutes ago
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

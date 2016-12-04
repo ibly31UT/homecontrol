@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<script type="text/javascript">
+
+window.templates = {{ templatesJSON | safe }};
+window.controls = {{ controlsJSON | safe }};
+window.layout = {{ layoutJSON | safe }};
+
+window.mobile = {% if mobile %}true{% else %}false{% endif %};
+
+</script>
+<script src="{% static 'js/views/index.js' %}"></script>
+{{ controlPanels | safe}}
+<div class="container-fluid">
+  <nav class="navbar navbar-fixed-bottom navbar-dark bg-inverse">
+    <div class="nav navbar-nav container-fluid">
+      {% if mobile %}
+      <div class="col-xs-4 navIcon">
+        <img src="{% static 'img/HomeControl.png' %}">
+      </div>
+      <div class="col-xs-4 navIcon">
+        <a id="toggleDragButton" href="#" class="nav-link">
+          <img src="{% static 'img/DraggingIcon.png' %}">
+        </a>
+      </div>
+      <div class="col-xs-4 navIcon">
+        <a id="widgetDropdown" href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <img src="{% static 'img/AddIcon.png' %}">
+        </a>
+        <ul class="dropdown-menu">
+        {% for control in controls %}
+            <li><a href="#" class="dropdown-item addWidgetButton" id="{{ control.id }}">{{ control.name }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+      {% else %}
+      <div class="nav-item col-xs-12 col-md-4 navBrand">
+        <a href="#" class="nav-brand">HomeControl</a>
+      </div>
+      <div class="nav-item col-xs-12 col-md-4">
+        <button id="toggleDragButton" class="btn btn-block btn-success">Dragging Enabled</button>
+      </div>
+      <div class="nav-item col-xs-12 col-md-3">
+        <div class="btn-group dropup">
+          <button type="button" class="btn btn-block btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add a Widget</button>
+          <div class="dropdown-menu">
+          {% for control in controls %}
+            <a href="#" class="dropdown-item addWidgetButton" id="{{ control.id }}">{{ control.name }}</a>
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </ul>
+  </nav>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card text-xs-center">
+        <div class="card-header">
+          <h2>Home Control Apps</h2>
+        </div>
+        <!-- <div class="card-block">
+          <h4 class="card-title"></h4>
+          <form>
+            <div class="form-group row">
+              
+            </div>
+          </form>
+        </div> -->
+        <!-- <div class="card-footer text-muted">
+          Stuff goes
+          <a href="#">here!</a>
+        </div> -->
+      </div>
+    </div>    
+  </div>
+</div>
+<div id="_gridsterContainer" class="container-fluid text-xs-center">
+  <div class="gridster row">
+    <ul class="list-unstyled">
+
+    </ul>
+  </div> 
+</div>
+{% endblock %}

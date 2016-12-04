@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<script src="{% static 'js/jquery.js' %}"></script>
+		<script src="{% static 'js/bootstrap.js' %}"></script>
+		<script src="{% static 'js/bootstrap-switch.js' %}"></script>
+		<script src="{% static 'js/jquery.gridster.js' %}"></script>
+		<script src="{% static 'js/jquery.tinycolorpicker.min.js' %}"></script>
+		<script src="{% static 'js/tinycolorpicker.min.js' %}"></script>
+		<script src="{% static 'js/site.js' %}"></script>
+		<link href="{% static 'css/tinycolorpicker.css' %}" rel="stylesheet">
+		<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" media="screen">
+		<link href="{% static 'css/bootstrap-switch.css' %}" rel="stylesheet" media="screen">
+		<link href="{% static 'css/site.css' %}" rel="stylesheet">
+		<link href="{% static 'css/jquery.gridster.css' %}" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>	
+		{% csrf_token %}
+		{% block content%}{% endblock %}
+	</body>
+</html>

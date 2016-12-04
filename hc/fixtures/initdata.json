@@ -1,0 +1,197 @@
+[
+  {
+    "model": "hc.Control",
+    "pk": 1,
+    "fields": {
+      "name": "Light Switch",
+      "mobilename": "Light",
+      "color": "#5cb85c",
+      "state": "off",
+      "description": "Control the overhead lights"
+    }
+  },
+  {
+    "model": "hc.Control",
+    "pk": 2,
+    "fields": {
+      "name": "Thermostat",
+      "mobilename": "Temp",
+      "color": "#d9534f",
+      "state": "off",
+      "description": "Temperature of the thermostat"
+    }
+  },
+  {
+    "model": "hc.Control",
+    "pk": 3,
+    "fields": {
+      "name": "Light Show",
+      "color": "#0275d8",
+      "state": "off",
+      "description": "Lightshow's patterns and brightness"
+    }
+  },
+  {
+    "model": "hc.Control",
+    "pk": 4,
+    "fields": {
+      "name": "AUX Switch",
+      "color": "#f0ad4e",
+      "state": "pc",
+      "description": "Switch aux input from PC to Echo"
+    }
+  },
+  {
+    "model": "hc.Control",
+    "pk": 5,
+    "fields": {
+      "name": "Laser Show",
+      "color": "#C0C0C0",
+      "state": "off",
+      "description": "Control the Laser lights"
+    }
+  },
+  {
+    "model": "hc.Input",
+    "pk": 1,
+    "fields": {
+      "name": "Light On/Off",
+      "input_type": "togglebutton",
+      "properties": "{\"onColor\": \"success\", \"offColor\": \"danger\", \"onText\": \"On\", \"offText\": \"Off\"}",
+      "control": 1
+    }
+  },
+  {
+    "model": "hc.Input",
+    "pk": 2,
+    "fields": {
+      "name": "Temperature Setting",
+      "input_type": "rangevalue",
+      "properties": "{\"valueFormat\": \"Temperature: %%VAL%% °F\"}",
+      "control": 2
+    }
+  },
+  {
+    "model": "hc.Input",
+    "pk": 3,
+    "fields": {
+      "name": "Send Temperature",
+      "input_type": "singlebutton",
+      "properties": "{\"buttonClass\": \"btn-success\", \"buttonTitle\": \"Send\"}",
+      "control": 2
+    }
+  },
+  {
+    "model": "hc.Input",
+    "pk": 4,
+    "fields": {
+      "name": "Lightshow Color",
+      "input_type": "colorvalue",
+      "properties": "{\"fuck\": \"hi\"}",
+      "control": 3
+    }
+  },
+  {
+    "model": "hc.Input",
+    "pk": 5,
+    "fields": {
+      "name": "Send Lightshow",
+      "input_type": "singlebutton",
+      "properties": "{\"buttonClass\": \"btn-success\", \"buttonTitle\": \"Send\"}",
+      "control": 3
+    }
+  },
+  {
+    "model": "hc.Input",
+    "pk": 6,
+    "fields": {
+      "name": "Toggle AUX",
+      "input_type": "togglebutton",
+      "properties": "{\"onColor\": \"success\", \"offColor\": \"danger\", \"onText\": \"PC\", \"offText\": \"Echo\"}",
+      "control": 4
+    }
+  },
+  {
+    "model": "hc.Input",
+    "pk": 7,
+    "fields": {
+      "name": "Toggle Laser",
+      "input_type": "togglebutton",
+      "properties": "{\"onColor\": \"success\", \"offColor\": \"danger\", \"onText\": \"On\", \"offText\": \"Off\"}",
+      "control": 5
+    }
+  },
+  {
+    "model": "hc.Widget",
+    "pk": 1,
+    "fields": {
+      "control_id": 1,
+      "col": 1,
+      "row": 1,
+      "size_x": 1,
+      "size_y": 1,
+      "state": "{\"status\":\"ok\"}",
+      "layout": 1
+    }
+  },
+  {
+    "model": "hc.Widget",
+    "pk": 2,
+    "fields": {
+      "control_id": 2,
+      "col": 2,
+      "row": 1,
+      "size_x": 1,
+      "size_y": 1,
+      "state": "{\"status\":\"ok\"}",
+      "layout": 1
+    }
+  },
+  {
+    "model": "hc.Widget",
+    "pk": 3,
+    "fields": {
+      "control_id": 3,
+      "col": 3,
+      "row": 1,
+      "size_x": 1,
+      "size_y": 1,
+      "state": "{\"status\":\"ok\"}",
+      "layout": 1
+    }
+  },
+  {
+    "model": "hc.Widget",
+    "pk": 4,
+    "fields": {
+      "control_id": 4,
+      "col": 1,
+      "row": 2,
+      "size_x": 1,
+      "size_y": 1,
+      "state": "{\"status\":\"ok\"}",
+      "layout": 1
+    }
+  },
+  {
+    "model": "hc.Widget",
+    "pk": 5,
+    "fields": {
+      "control_id": 5,
+      "col": 3,
+      "row": 2,
+      "size_x": 1,
+      "size_y": 1,
+      "state": "{\"status\":\"ok\"}",
+      "layout": 1
+    }
+  },
+  {
+    "model": "hc.GridLayout",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "name": "Room 204 HomeControl"
+    }
+  }
+]

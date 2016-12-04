@@ -1,0 +1,39 @@
+<div class="modal fade" id="modal{{ control.id }}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content text-xs-center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">{{ control.name }}</h4>
+      </div>
+      <div class="modal-body">
+        {% for input in control.inputs %}
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">{{ input.name }}</h5>
+            </div>
+            <div class="card-block">
+              {% if input.input_type == "singlebutton" %}
+                <button id="{{ input.id }}" class="btn btn-block control-sb {{ input.buttonClass }}">{{ input.buttonTitle }}</button>
+              {% elif input.input_type == "rangevalue" %}
+                <input id="{{ input.id }}" class="value-slider control-rv" data-slider-id='rangeSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="85"/>
+              {% elif input.input_type == "togglebutton" %}
+                <input id="{{ input.id }}" class="control-tb" type="checkbox" name="{{ input.name }}" data-size="large" data-on-text="{{ input.onText }}" data-off-text="{{ input.offText }}" data-on-color="{{ input.onColor }}" data-off-color="{{ input.offColor }}" checked>
+              {% elif input.input_type == "colorvalue" %}
+                <div id="{{ input.id }}" class="colorPicker">
+                  <a class="color"><div class="colorInner"></div>Color :</a>
+                  <div class="track mobile"></div>
+                  <ul class="dropdown"><li></li></ul>
+                  <input type="hidden" class="colorInput"/>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          
+        {% endfor %}
+        
+      </div>
+    </div>
+  </div>
+</div>

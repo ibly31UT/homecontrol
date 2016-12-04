@@ -1,0 +1,114 @@
+#content {
+	margin-top: 30px;
+}
+
+@media(max-width: 768px){
+    .container-fluid {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+.bootstrap-switch {
+    max-height: 40px;
+}
+
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+.gridster {
+    text-align: center;
+}
+
+.gridster ul {
+    display: inline-block;
+    /* For IE, the outcast */
+    zoom:1;
+    *display: inline;
+}
+
+.gridster li {
+    float: left;
+}
+
+#gridsterContainer {
+    background-color: #79CDCD;
+}
+
+#gridsterContainer > div {
+    background-color: #66CCCC;
+}
+
+#gridsterContainer ul {
+    background-color: #AEEEEE;
+}
+
+.navBrand {
+    text-align: center;
+}
+
+.navBrand a {
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+
+}
+
+.navIcon img {
+    max-width: 64px;
+    max-height: 64px;
+    width: 64px;
+    height: 64px;
+}
+
+.navIcon {
+    background-color: gray;
+    text-align: center;
+}
+
+.mobileWidgetCard {
+    height: 100px;
+    width: 100px;
+}
+
+.widgetButton {
+    white-space: normal; 
+    word-wrap: break-word;
+    color: white;
+}
+
+.widgetCard > .card-header {
+    height: 50px;
+    min-height: 50px;
+}
+
+.widgetCard > .card-block {
+    height: 88px;
+    min-height: 88px;
+}
+
+.widgetCard > .card-footer {
+    height: 50px;
+    min-height: 50px;
+}
+
+.widgetDescription {
+    text-align: center;
+}
+
+.widgetCloseButton {
+    float:right; 
+    margin-right: 5px; 
+    color: black; 
+    z-index: 3;
+}
+
+#toggleDragButton, #saveGridButton, #widgetDropdown {
+    padding-top:15px;
+    padding-bottom:15px;
+}
